@@ -1,0 +1,21 @@
+# Cloudflare configuration and local state
+wrangler.toml
+wrangler.json
+wrangler.jsonc
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Local secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+
+# Local-only files
+local-*
+.DS_Store
+
+# Internal design documents (kept locally)
+/AGENTS.md
+/design.md
