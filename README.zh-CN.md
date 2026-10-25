@@ -2,7 +2,13 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-用于分发预编译命令行工具的个人 Homebrew Tap。
+用于分发预编译桌面应用的个人 Homebrew Tap。
+
+## 可用软件包
+
+| 软件包 | 类型 | 平台 |
+| --- | --- | --- |
+| `revision` | Cask | macOS（Apple Silicon、Intel）、Linux（x86_64） |
 
 ## 安装
 
@@ -12,23 +18,23 @@
 brew tap MaphicalYng/tap
 ```
 
-安装软件包，将 `<工具名>` 替换为对应的 Formula 名称：
+安装 revision：
 
 ```bash
-brew install MaphicalYng/tap/<工具名>
+brew install --cask MaphicalYng/tap/revision
 ```
 
 ## 升级
 
 ```bash
 brew update
-brew upgrade MaphicalYng/tap/<工具名>
+brew upgrade --cask MaphicalYng/tap/revision
 ```
 
 ## 卸载
 
 ```bash
-brew uninstall <工具名>
+brew uninstall --cask revision
 ```
 
 卸载此 Tap 中的所有软件包后，可以移除 Tap：
