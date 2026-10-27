@@ -18,9 +18,16 @@ Add the tap once:
 brew tap MaphicalYng/tap
 ```
 
-Install revision:
+Install revision on macOS with `--no-quarantine`, since the app is not currently signed with an Apple Developer certificate:
 
 ```bash
+brew install --cask --no-quarantine MaphicalYng/tap/revision
+```
+
+Alternatively, disable quarantine by default for all Cask installations:
+
+```bash
+export HOMEBREW_CASK_OPTS="--no-quarantine"
 brew install --cask MaphicalYng/tap/revision
 ```
 
