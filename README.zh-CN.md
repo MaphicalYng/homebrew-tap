@@ -18,17 +18,16 @@
 brew tap MaphicalYng/tap
 ```
 
-由于 revision 目前未使用 Apple 开发者证书签名，在 macOS 上安装时请添加 `--no-quarantine`：
+在 macOS 上安装 revision：
 
 ```bash
-brew install --cask --no-quarantine MaphicalYng/tap/revision
+brew install --cask MaphicalYng/tap/revision
 ```
 
-也可以设置环境变量，默认对所有 Cask 安装禁用下载隔离：
+由于 revision 目前未使用 Apple 开发者证书签名，如果 macOS 阻止应用打开，且你信任此发布版本，可以仅移除该应用的下载隔离属性：
 
 ```bash
-export HOMEBREW_CASK_OPTS="--no-quarantine"
-brew install --cask MaphicalYng/tap/revision
+xattr -dr com.apple.quarantine /Applications/revision.app
 ```
 
 ## 升级
