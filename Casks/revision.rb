@@ -3,12 +3,12 @@ cask "revision" do
 
   on_macos do
     on_arm do
-      sha256 "bc3280f53fab2d28c54b9a841262624f18d20da2875d12be2cd0da95efb29d16"
-      url "https://homebrew-tap.maphical.dev/revision/#{version}/revision-#{version}-mac-arm64.dmg"
+      sha256 "2250190b49c3158a5ff0f78866abdec17e4e344aed64fd2c2b7cfa72551dbe14"
+      url "https://homebrew-tap.maphical.dev/revision/#{version}/revision-#{version}-mac-arm64.dmg?v=0f97cf0"
     end
     on_intel do
-      sha256 "f58b50fe1adceb7cf9647650c3cfa397b14ff984ceca8bb05d0973bc5cad2c46"
-      url "https://homebrew-tap.maphical.dev/revision/#{version}/revision-#{version}-mac-x64.dmg"
+      sha256 "53a7ad5eb77f4dc6414180d3057e9de13778b809e7970a65758b5808bd7479d3"
+      url "https://homebrew-tap.maphical.dev/revision/#{version}/revision-#{version}-mac-x64.dmg?v=0f97cf0"
     end
 
     depends_on macos: :ventura
@@ -16,9 +16,9 @@ cask "revision" do
     app "revision.app"
   end
   on_linux do
-    sha256 "90cbfc18ff38b658909fa07211ed318e61cdaaa7fe2109d76dac7b6fae346491"
+    sha256 "5a114bde7ab6f04883b27ee3f33bb7cd39b64cba6d4e2cb0ba87452e9323828f"
 
-    url "https://homebrew-tap.maphical.dev/revision/#{version}/revision-#{version}-linux-x86_64.AppImage"
+    url "https://homebrew-tap.maphical.dev/revision/#{version}/revision-#{version}-linux-x86_64.AppImage?v=0f97cf0"
 
     depends_on arch: :x86_64
 
