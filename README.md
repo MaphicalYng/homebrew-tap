@@ -9,6 +9,7 @@ A personal Homebrew tap for prebuilt desktop applications.
 | Package | Type | Platforms |
 | --- | --- | --- |
 | `revision` | Cask | macOS (Apple Silicon, Intel), Linux (x86_64) |
+| `pi-web` | Cask | macOS (Apple Silicon) |
 
 ## Install
 
@@ -24,10 +25,17 @@ Install revision on macOS:
 brew install --cask MaphicalYng/tap/revision
 ```
 
-The app is not currently signed with an Apple Developer certificate. If macOS prevents it from opening, and you trust this release, remove the quarantine attribute from this app only:
+Install pi-web on Apple Silicon macOS (12 or later):
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/revision.app
+brew install --cask MaphicalYng/tap/pi-web
+```
+
+These apps are not currently signed with an Apple Developer certificate. If macOS prevents one from opening, and you trust this release, remove the quarantine attribute from that app only:
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/revision.app"
+xattr -dr com.apple.quarantine "/Applications/Pi Web.app"
 ```
 
 ## Upgrade
@@ -35,12 +43,14 @@ xattr -dr com.apple.quarantine /Applications/revision.app
 ```bash
 brew update
 brew upgrade --cask MaphicalYng/tap/revision
+brew upgrade --cask MaphicalYng/tap/pi-web
 ```
 
 ## Uninstall
 
 ```bash
 brew uninstall --cask revision
+brew uninstall --cask pi-web
 ```
 
 After uninstalling all packages from this tap, you can remove it:

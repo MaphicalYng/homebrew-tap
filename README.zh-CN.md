@@ -9,6 +9,7 @@
 | 软件包 | 类型 | 平台 |
 | --- | --- | --- |
 | `revision` | Cask | macOS（Apple Silicon、Intel）、Linux（x86_64） |
+| `pi-web` | Cask | macOS（Apple Silicon） |
 
 ## 安装
 
@@ -24,10 +25,17 @@ brew tap MaphicalYng/tap
 brew install --cask MaphicalYng/tap/revision
 ```
 
-由于 revision 目前未使用 Apple 开发者证书签名，如果 macOS 阻止应用打开，且你信任此发布版本，可以仅移除该应用的下载隔离属性：
+在 Apple Silicon macOS（12 或更高版本）上安装 pi-web：
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/revision.app
+brew install --cask MaphicalYng/tap/pi-web
+```
+
+由于这些应用目前未使用 Apple 开发者证书签名，如果 macOS 阻止某个应用打开，且你信任此发布版本，可以仅移除该应用的下载隔离属性：
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/revision.app"
+xattr -dr com.apple.quarantine "/Applications/Pi Web.app"
 ```
 
 ## 升级
@@ -35,12 +43,14 @@ xattr -dr com.apple.quarantine /Applications/revision.app
 ```bash
 brew update
 brew upgrade --cask MaphicalYng/tap/revision
+brew upgrade --cask MaphicalYng/tap/pi-web
 ```
 
 ## 卸载
 
 ```bash
 brew uninstall --cask revision
+brew uninstall --cask pi-web
 ```
 
 卸载此 Tap 中的所有软件包后，可以移除 Tap：
