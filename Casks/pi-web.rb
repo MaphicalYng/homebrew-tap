@@ -20,4 +20,12 @@ cask "pi-web" do
   livecheck do
     skip "Tags are fork releases named <upstream>-imp-<n>, which GitHub's latest-tag strategy truncates"
   end
+
+  caveats do
+    <<~EOS
+      Pi Web is unsigned and not notarized. If macOS prevents it from opening
+      and you trust this release, remove its quarantine attribute with:
+        xattr -dr com.apple.quarantine "#{appdir}/Pi Web.app"
+    EOS
+  end
 end
