@@ -35,4 +35,12 @@ cask "revision" do
   end
 
   depends_on formula: "git"
+
+  caveats do
+    <<~EOS
+      revision is unsigned and not notarized. If macOS prevents it from opening
+      and you trust this release, remove its quarantine attribute with:
+        xattr -dr com.apple.quarantine "#{appdir}/revision.app"
+    EOS
+  end
 end
