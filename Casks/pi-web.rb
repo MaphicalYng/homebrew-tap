@@ -4,8 +4,9 @@ cask "pi-web" do
   on_macos do
     on_arm do
       sha256 "dd91638691a6ee0d2ea52ea9a0b2b063302722f4a0623f4f85baa9d8df82fd02"
-      # GitHub replaces the space in "Pi Web-<version>-arm64.dmg" with a dot.
-      url "https://github.com/MaphicalYng/pi-web/releases/download/v#{version}/Pi.Web-#{version}-arm64.dmg"
+      # ?v= is the release commit's short id: the CDN caches negative responses, so a fresh
+      # token keeps this path from being served out of a stale entry.
+      url "https://homebrew-tap.maphical.dev/pi-web/#{version}/pi-web-#{version}-mac-arm64.dmg?v=a065193"
     end
 
     depends_on macos: :monterey
